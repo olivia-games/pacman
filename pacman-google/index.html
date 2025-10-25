@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="manifest" href="https://pacman-30thanniversary.vercel.app/manifest.json" />
+<meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#151515" />
+    <title>Google Pacman | Play Online</title>
+    <meta name="description" content="Enjoy the timeless excitement of Google PacMan! Navigate the maze, avoid ghosts, and gobble up pellets in this classic arcade game available to play online for free">
+    <link rel="canonical" href="https://pacman-30thanniversary.vercel.app/pacman-google/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <link rel="icon" type="image/png" href="/assets/img/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/assets/img/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="/assets/img/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicon/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="PacMan Google" />
+    <meta property="og:title" content="Google PacMan | Play the Game">
+    <meta property="og:description" content="Relive the classic arcade experience with Google PacMan. Play the iconic maze game online and challenge yourself to beat the high score while avoiding ghosts!">
+    <meta property="og:locale" content="en">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://pacman-30thanniversary.vercel.app/pacman-google/">
+    <meta property="og:site_name" content="Google PacMan">
+    <meta property="og:width" content="1200">
+    <meta property="og:height" content="630">
+    <meta property="og:image" content="/assets/img/pacman.png">
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Google PacMan | Play the Game" />
+    <meta name="twitter:description" content="Play Google PacMan online - the classic maze arcade game! Dodge ghosts, eat pellets, and enjoy endless fun for free." />
+    <meta name="twitter:image" content="/assets/img/pacman.png">
+
+
+    <style>
+        body {
+            margin:0;
+            background: #000;
+        }
+        @font-face {
+            font-family: 'ArcadeR';
+            src: url('/assets/font/ARCADE_R.TTF');
+        }
+        #canvas-warning {
+            color: #FF0;
+            font-size: 1.5em;
+        }
+    </style>
+
+
+</head>
+
+<body>
+<script>
+if('serviceWorker' in navigator) {window.addEventListener('load', () => {navigator.serviceWorker.register('/sw.js')
+.then(registration => {console.log('Service Worker registered successfully:', registration);})
+.catch(error => {console.log('Error in Service Worker registration:', error);});});}
+</script>
+</div>
+
+    <div style='font-family: ArcadeR'> </div>
+    <canvas id='canvas'><div id="canvas-warning">Your browser does not support HTML Canvas.  Please upgrade!</div></canvas>
+    <canvas id='atlas' style="display:none"></canvas>
+
+    <script src="/assets/js/pacman.js?v1.11"></script>
+</body>
+
+</html>
