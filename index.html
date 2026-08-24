@@ -5,14 +5,13 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
 <meta name="robots" content="index, follow" />
+<link rel="manifest" href="/manifest.json" />
 <meta name="theme-color" content="#0a0a14" />
 <title>Pac-Man 30th Anniversary | Play the Classic Maze Game</title>
 <meta name="description" content="Play Pac-Man 30th Anniversary free in your browser. Guide Pac-Man through the maze, dodge four ghosts, chase power pellets and chase a new high score - no download needed." />
 <link rel="canonical" href="https://pacman-30thanniversary.vercel.app/" />
 
-<!-- Iframe game source (loaded in-page below) -->
-<link rel="dns-prefetch" href="https://pacman-30thanniversary.netlify.app/" />
-<link rel="preconnect" href="https://pacman-30thanniversary.netlify.app/" crossorigin />
+<!-- Game source (opens in a new tab via button below) -->
 <meta name="game-source" content="https://pacman-30thanniversary.netlify.app/" />
 
 <!-- Fonts -->
@@ -21,9 +20,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
 <!-- Icons -->
-<link rel="icon" type="image/png" href="https://pacman-30thanniversary.netlify.app/assets/img/favicon/favicon-96x96.png" sizes="96x96" />
-<link rel="icon" type="image/svg+xml" href="https://pacman-30thanniversary.netlify.app/assets/img/favicon/favicon.svg" />
-<link rel="apple-touch-icon" sizes="180x180" href="https://pacman-30thanniversary.netlify.app/assets/img/favicon/apple-touch-icon.png" />
+<link rel="shortcut icon" href="https://pacman-30thanniversary.vercel.app/assets/img/favicon/favicon.ico">
+<link rel="icon" type="image/png" href="https://pacman-30thanniversary.vercel.app/assets/img/favicon/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="https://pacman-30thanniversary.vercel.app/assets/img/favicon/favicon.svg" />
+<link rel="apple-touch-icon" sizes="180x180" href="https://pacman-30thanniversary.vercel.app/assets/img/favicon/apple-touch-icon.png" />
 <meta name="apple-mobile-web-app-title" content="Pac-Man 30th" />
 
 <!-- Open Graph -->
@@ -103,8 +103,8 @@
   "name": "How to Play Pac-Man 30th Anniversary",
   "description": "A six-step guide to loading and playing Pac-Man 30th Anniversary in your browser.",
   "step": [
-    { "@type": "HowToStep", "position": 1, "name": "Load the maze", "text": "Scroll to the game window at the top of the page and wait a moment for the maze to finish loading - no account or download is required." },
-    { "@type": "HowToStep", "position": 2, "name": "Start the run", "text": "Click inside the game window, then press Space or tap Start to spawn Pac-Man at the bottom of the maze." },
+    { "@type": "HowToStep", "position": 1, "name": "Open the maze", "text": "Scroll to the Play button at the top of the page and tap it to open the game in a new tab - no account or download is required." },
+    { "@type": "HowToStep", "position": 2, "name": "Start the run", "text": "Once the new tab loads, click inside the game window, then press Space or tap Start to spawn Pac-Man at the bottom of the maze." },
     { "@type": "HowToStep", "position": 3, "name": "Learn the controls", "text": "Use the four arrow keys on desktop, or swipe in a direction on a touchscreen, to steer Pac-Man through the corridors." },
     { "@type": "HowToStep", "position": 4, "name": "Clear every pellet", "text": "Guide Pac-Man over every small dot in the maze without letting one of the four ghosts touch him." },
     { "@type": "HowToStep", "position": 5, "name": "Use power pellets wisely", "text": "Grab a large flashing pellet in a corner to turn the ghosts blue for a short window, then chase them down for bonus points." },
@@ -137,17 +137,17 @@
     {
       "@type": "Question",
       "name": "Why won't the game load?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Give the window a few seconds on a slow connection, then use the Reload button under the game. If it still won't start, try disabling an ad blocker for this page or opening the mirror link in the footer." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Give the new tab a few seconds to load on a slow connection. If it still won't start, try disabling an ad blocker or opening the link in the footer instead." }
     },
     {
       "@type": "Question",
-      "name": "Does the fullscreen button work on every browser?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Fullscreen relies on a standard browser API supported by all modern desktop and mobile browsers. If a browser blocks it, the game still plays normally at its regular size." }
+      "name": "Does the game open in a new tab on every browser?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. The Play button uses a standard link that opens in a new browser tab on all modern desktop and mobile browsers." }
     },
     {
       "@type": "Question",
       "name": "Is my progress or score saved?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Scores reset when the page or the game window is reloaded - this tribute page doesn't create accounts or store cloud saves." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Scores reset when the game tab is reloaded - this tribute page doesn't create accounts or store cloud saves." }
     }
   ]
 }
@@ -158,6 +158,11 @@
 html[data-theme="light"]{--bg:#eef0f8;--bg-alt:#fff;--surface:#fff;--surface-2:#f3f4fc;--text:#0e0e1f;--text-dim:#1b1b25;--line:#1717301a;--yellow-dim:#a98400;--shadow:0 16px 40px #1e1e4624;--maze:#dfe2f5}
 *,::before,::after{box-sizing:border-box}
 html{scroll-behavior:smooth}
+::-webkit-scrollbar{width:12px;height:12px}
+::-webkit-scrollbar-track{background:var(--bg-alt)}
+::-webkit-scrollbar-thumb{background:var(--surface-2);border-radius:999px;border:3px solid var(--bg-alt)}
+::-webkit-scrollbar-thumb:hover{background:var(--yellow-dim)}
+html{scrollbar-width:thin;scrollbar-color:var(--surface-2) var(--bg-alt)}
 @media (prefers-reduced-motion: reduce) {
 html{scroll-behavior:auto}
 *,::before,::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}
@@ -215,9 +220,11 @@ html[data-theme="light"] .theme-toggle__thumb{transform:translateX(24px)}
 .chip:hover{border-color:var(--yellow);transform:translateY(-1px)}
 .game-cabinet{background:var(--maze);border:2px solid color-mix(in srgb,var(--yellow) 55%,var(--line));border-radius:18px;padding:14px;box-shadow:var(--shadow),inset 0 0 0 6px color-mix(in srgb,var(--bg) 40%,transparent);position:relative}
 .game-cabinet::before{content:"";position:absolute;inset:8px;border:1px dashed color-mix(in srgb,var(--yellow) 25%,transparent);border-radius:12px;pointer-events:none}
-.game-frame-wrap{position:relative;width:100%;aspect-ratio:4/3;max-height:78vh;border-radius:10px;overflow:hidden;background:#000}
-.game-frame-wrap iframe{width:100%;height:100%;border:0;display:block}
-.game-frame-wrap.is-loading::after{content:"Loading maze…";position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:var(--yellow);font-family:var(--font-display);font-size:.7rem;letter-spacing:.08em;background:#000}
+.game-launch{position:relative;width:100%;min-height:340px;max-height:78vh;border-radius:10px;overflow:hidden;background:radial-gradient(circle at 50% 40%,color-mix(in srgb,var(--maze) 92%,var(--yellow) 8%),var(--maze) 70%);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:14px;padding:48px 24px}
+.game-launch__icon{width:64px;height:64px;border-radius:50%;background:var(--yellow);clip-path:polygon(100% 50%,45% 8%,45% 27%,100% 50%,45% 73%,45% 92%);animation:munch 2.4s linear infinite}
+.game-launch__title{font-size:1.3rem;margin:4px 0 0;color:var(--text)}
+.game-launch__text{color:var(--text-dim);max-width:42ch;margin:0}
+.btn--lg{padding:14px 26px;font-size:1rem;margin-top:6px}
 .game-controls{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;margin-top:14px}
 .game-controls__buttons{display:flex;gap:10px;flex-wrap:wrap}
 .btn{font-family:var(--font-head);font-weight:600;font-size:.92rem;display:inline-flex;align-items:center;gap:8px;padding:11px 18px;border-radius:10px;border:1px solid transparent;cursor:pointer;text-decoration:none;transition:transform .15s ease,filter .15s ease}
@@ -285,6 +292,7 @@ html[data-theme="light"] .theme-toggle__thumb{transform:translateX(24px)}
 .menu-btn{display:flex}
 .section{padding:52px 0}
 .game-frame-wrap{aspect-ratio:3/4;max-height:70vh}
+.game-launch{min-height:260px}
 }
 @media (max-width:480px) {
 .brand__text{font-size:.6rem}
@@ -349,24 +357,15 @@ html[data-theme="light"] .theme-toggle__thumb{transform:translateX(24px)}
     </div>
 
     <div class="game-cabinet">
-      <div class="game-frame-wrap is-loading" id="gameFrameWrap">
-        <iframe
-          id="gameFrame"
-          src="https://pacman-30thanniversary.netlify.app/"
-          title="Pac-Man 30th Anniversary - playable game"
-          loading="lazy"
-          allow="fullscreen"
-          allowfullscreen
-          referrerpolicy="no-referrer-when-downgrade">
-        </iframe>
+      <div class="game-launch" id="gameLaunch">
+        <span class="game-launch__icon" aria-hidden="true"></span>
+        <h2 class="game-launch__title">Ready to play?</h2>
+        <p class="game-launch__text">Pac-Man 30th Anniversary opens in a new tab, full-size and ready to go - no embed, no waiting.</p>
+        <a class="btn btn--primary btn--lg" id="launchBtn" href="https://pacman-30thanniversary.netlify.app/" target="_blank" rel="noopener noreferrer">▶ Play in new tab</a>
       </div>
 
       <div class="game-controls">
-        <div class="game-controls__buttons">
-          <button type="button" class="btn btn--primary" id="fullscreenBtn">⛶ Fullscreen</button>
-          <button type="button" class="btn btn--ghost" id="reloadBtn">⟳ Reload</button>
-        </div>
-        <p class="game-controls__hint">Move with <kbd>↑</kbd><kbd>↓</kbd><kbd>←</kbd><kbd>→</kbd> or swipe on touch</p>
+        <p class="game-controls__hint">Move with <kbd>↑</kbd><kbd>↓</kbd><kbd>←</kbd><kbd>→</kbd> or swipe on touch, once the game opens</p>
       </div>
     </div>
 
@@ -376,7 +375,7 @@ html[data-theme="light"] .theme-toggle__thumb{transform:translateX(24px)}
 
   <div class="pellet-trail" aria-hidden="true"></div>
 
-  <!-- ABOUT / SEO TEXT -->
+  <!-- ABOUT / TEXT -->
   <section class="about section" id="about">
     <div class="container about__grid">
       <div class="about__body">
@@ -385,7 +384,7 @@ html[data-theme="light"] .theme-toggle__thumb{transform:translateX(24px)}
         <p>Pac-Man 30th Anniversary is a browser tribute to one of the most recognizable arcade games ever made. The rules haven't changed in thirty years, and that's exactly the point: steer a hungry yellow circle through a neon-blue maze, clear every pellet on the board, and stay one turn ahead of four ghosts who are learning your habits faster than you'd like.</p>
         <p>What made the original stand out in 1980 still holds up today. There's no story to follow and no tutorial to sit through - you understand the goal within five seconds of looking at the maze, and the challenge comes entirely from timing, spatial awareness, and knowing when to turn a corner instead of running straight into a ghost's path. This version keeps that same directness while running smoothly in any modern browser, on a laptop, a tablet, or a phone in your pocket.</p>
         <p>The four ghosts each behave a little differently once you spend a few rounds with them - one tends to cut you off at intersections, another hangs back and waits. Learning those patterns is most of the game. Power pellets sitting in the four corners of the maze flip the hunt around for a few seconds, turning the ghosts blue and vulnerable, which is usually where the real scoring happens if you're brave enough to double back for them.</p>
-        <p>Because everything runs client-side in the embedded game window above, there's nothing to install and nothing to configure. Load the page, press start, and you're playing. If you'd rather open the game in its own tab, the fullscreen button below the maze does exactly that, and the reload button resets a stuck or slow-loading session without you needing to refresh the whole page.</p>
+        <p>Because the game runs entirely client-side, there's nothing to install and nothing to configure. Tap the Play button above, let the new tab load, press start, and you're playing.</p>
       </div>
 
       <aside class="fact-panel">
@@ -413,13 +412,13 @@ html[data-theme="light"] .theme-toggle__thumb{transform:translateX(24px)}
       <ol class="howto__list">
         <li class="howto__item">
           <span class="howto__badge" aria-hidden="true">1</span>
-          <h3>Load the maze</h3>
-          <p>Scroll to the game window at the top of the page and give it a moment to finish loading - no account or download is required.</p>
+          <h3>Open the maze</h3>
+          <p>Scroll to the Play button at the top of the page and tap it to open the game in a new tab - no account or download is required.</p>
         </li>
         <li class="howto__item">
           <span class="howto__badge" aria-hidden="true">2</span>
           <h3>Start the run</h3>
-          <p>Click inside the game window, then press Space or tap Start to spawn Pac-Man at the bottom of the maze.</p>
+          <p>Once the new tab loads, click inside the game window, then press Space or tap Start to spawn Pac-Man at the bottom of the maze.</p>
         </li>
         <li class="howto__item">
           <span class="howto__badge" aria-hidden="true">3</span>
@@ -468,12 +467,12 @@ html[data-theme="light"] .theme-toggle__thumb{transform:translateX(24px)}
         <article class="feature-card" style="--accent:var(--pink)">
           <div class="feature-card__icon"><i class="i-bolt"></i></div>
           <h3>Runs on any device</h3>
-          <p>The layout and the game window scale down cleanly, so it's just as playable on a phone as on a monitor.</p>
+          <p>The page layout and the game itself scale down cleanly, so it's just as playable on a phone as on a monitor.</p>
         </article>
         <article class="feature-card" style="--accent:var(--orange)">
           <div class="feature-card__icon"><i class="i-circle"></i></div>
-          <h3>One-tap fullscreen</h3>
-          <p>Drop distractions and expand the maze to fill your screen with a single button, no browser settings to dig through.</p>
+          <h3>One-tap launch</h3>
+          <p>Drop distractions and open the maze full-size in its own tab with a single button, no browser settings to dig through.</p>
         </article>
         <article class="feature-card" style="--accent:var(--yellow)">
           <div class="feature-card__icon"><i class="i-square"></i></div>
@@ -512,15 +511,15 @@ html[data-theme="light"] .theme-toggle__thumb{transform:translateX(24px)}
         </details>
         <details class="faq-item">
           <summary class="faq-item__q">Why won't the game load?</summary>
-          <p class="faq-item__a">Give the window a few seconds on a slow connection, then use the Reload button under the game. If it still won't start, try disabling an ad blocker for this page or open the mirror link in the footer.</p>
+          <p class="faq-item__a">Give the new tab a few seconds to load on a slow connection. If it still won't start, try disabling an ad blocker or opening the mirror link in the footer instead.</p>
         </details>
         <details class="faq-item">
-          <summary class="faq-item__q">Does the fullscreen button work on every browser?</summary>
-          <p class="faq-item__a">Fullscreen relies on a standard browser API supported by all modern desktop and mobile browsers. If a browser blocks it, the game still plays normally at its regular size.</p>
+          <summary class="faq-item__q">Does the game open in a new tab on every browser?</summary>
+          <p class="faq-item__a">Yes. The Play button uses a standard link that opens in a new browser tab on all modern desktop and mobile browsers.</p>
         </details>
         <details class="faq-item">
           <summary class="faq-item__q">Is my progress or score saved?</summary>
-          <p class="faq-item__a">Scores reset when the page or the game window is reloaded - this tribute page doesn't create accounts or store cloud saves.</p>
+          <p class="faq-item__a">Scores reset when the game tab is reloaded - this tribute page doesn't create accounts or store cloud saves.</p>
         </details>
       </div>
     </div>
@@ -548,7 +547,7 @@ html[data-theme="light"] .theme-toggle__thumb{transform:translateX(24px)}
       </ul>
     </div>
 
-    <p class="disclaimer">Disclaimer: This is an unofficial fan tribute page and is not affiliated with, endorsed by, or sponsored by Bandai Namco, Namco, or Google. Pac-Man and related marks belong to their respective owners. The playable game is embedded from a third-party source for entertainment purposes only.</p>
+    <p class="disclaimer">Disclaimer: This is an unofficial fan tribute page and is not affiliated with, endorsed by, or sponsored by Bandai Namco, Namco, or Google. Pac-Man and related marks belong to their respective owners. The playable game is hosted by a third-party source and opens in a new tab for entertainment purposes only.</p>
     <p class="copyright">© 2026 pacman-30thanniversary.vercel.app · All rights reserved.</p>
   </div>
 </footer>
@@ -598,32 +597,7 @@ html[data-theme="light"] .theme-toggle__thumb{transform:translateX(24px)}
     if (!mobileNav.contains(e.target) && !menuBtn.contains(e.target)) closeMenu();
   });
 
-  /*  Game frame: loading state, fullscreen, reload  */
-  var frameWrap = document.getElementById("gameFrameWrap");
-  var frame = document.getElementById("gameFrame");
-  var fullscreenBtn = document.getElementById("fullscreenBtn");
-  var reloadBtn = document.getElementById("reloadBtn");
-  var gameSrc = frame.getAttribute("src");
-
-  frame.addEventListener("load", function(){
-    frameWrap.classList.remove("is-loading");
-  });
-
-  fullscreenBtn.addEventListener("click", function(){
-    var el = frameWrap;
-    var request = el.requestFullscreen || el.webkitRequestFullscreen || el.mozRequestFullScreen || el.msRequestFullscreen;
-    if (request) {
-      request.call(el);
-    } else {
-      window.open(gameSrc, "_blank", "noopener");
-    }
-  });
-
-  reloadBtn.addEventListener("click", function(){
-    frameWrap.classList.add("is-loading");
-    frame.src = "about:blank";
-    window.setTimeout(function(){ frame.src = gameSrc; }, 60);
-  });
+  /*  Game launch button opens in a new tab natively via target="_blank" — no JS needed  */
 })();
 </script>
 
